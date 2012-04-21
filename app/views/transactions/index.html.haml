@@ -1,10 +1,9 @@
 # encoding: UTF-8
 
 #nav
-  %ol
-    %li= link_to('הכל', transactions_path(@name))
-    - @sectors.each do |s|
-      %li= link_to(s, transactions_sector_path(@name, s))
+  %div= link_to('הכל', transactions_path(@name))
+  - @sectors.each do |s|
+    %div= link_to(s, transactions_sector_path(@name, s))
 #data
   #stats
     .stat
