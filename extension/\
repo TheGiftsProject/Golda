@@ -1,0 +1,536 @@
+﻿<html lang="HE"><head>	
+	<title>אמריקן אקספרס - פרטי עסקה</title>
+
+	<meta http-equiv="content-Type" content="text/html; charset=ISO-8859-8">
+	<meta name="Generator" content="Rational Application Developer">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, private">
+	<meta http-equiv="x-frame-options" content="deny">
+	<link rel="stylesheet" type="text/css" href="/templates/amex/styleAmex2007.css">	
+	<script type="text/javascript" language="Javascript" src="/templates/js/ClientFunctions.js"></script>
+	<script type="text/javascript">		
+		function performOnLoad(){
+			updatePageTitle();
+			getCurrentFontSize();
+			protectionAgainstClickJacking();
+		}
+ 		
+ 		function alertSessionTime() {
+	 		getTimeOutAlertScreen("/A_sessionAlert.jsp", 380, 122);
+ 		}
+		
+		 		window.setTimeout("alertSessionTime()",720000);
+		
+	</script>
+	
+	<script type="text/javascript">	
+		function goTo214(txName){
+			var selectedBerur = document.getElementById("selectedBerur");
+			var selectedBerurVal = selectedBerur.value;
+			var selectedBerurText = selectedBerur[selectedBerur.selectedIndex].text;
+
+			if (selectedBerurVal == "0"){
+				alert("נא לבחור סיבת בירור.");
+				return;
+			}else if (selectedBerurVal == "2" || selectedBerurVal == "509"){
+				goTo205();
+			}else {		
+				document.getElementById("selectedBerurText").value = selectedBerurText;
+	   			document.getElementById("stage").value = "0";
+	   			document.getElementById("transactionId").value = txName;
+	   			document.getElementById("reqName").value = "action";
+				document.getElementById("iform").submit(); 
+			}
+	  	}
+	  	
+		function performTransaction(txName){ 
+     		document.getElementById("showAsFile").value = '0';
+			document.getElementById("transactionId").value = txName;
+			document.getElementById("reqName").value = "action";
+			document.getElementById("iform").submit();
+		}
+		
+		function goTo205(){
+   			document.getElementById("reqName").value = "action";
+   			document.getElementById("stage").value = "1";
+			goForward("GetCopyOfShovarIska_205", "PirteyIska_204");   
+	  	}
+	</script>
+
+</head>
+<body onload="JavaScript:performOnLoad();" onunload="JavaScript:closePopupWindows();">
+	<table class="GeneralTable" align="center" border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr>
+			<td class="TH" style="text-align:right;" colspan="2">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		    		<tbody><tr valign="top">
+		      			<td align="right" valign="top" class="logo" rowspan="2">
+		    				<a href="javascript:goToUrl('/isracard/amex?reqName=performExitA');" tabindex="1">
+		    					<img src="/images/amex2007/Logo_short.gif" width="145" height="76" alt="דף הבית" title="דף הבית">
+		    				</a>
+		      			</td>
+		      			<td align="left">		      			
+							<ul class="oneRow">									
+								<li class="oneRowNoBorder">
+	           						<a href="javascript:goToUrl('/isracard/amex?reqName=performExitA');" class="exit" tabindex="6" title="יציאה">יציאה</a>
+								</li>
+								<li class="oneRow">
+									<img id="enlargeFont" src="/images/amex2007/setLargerFont.bmp" border="0" title="הגדלת טקסט" alt="הגדלת טקסט" class="changeFontSize" onclick="javascript:enlargeFontSize(true);" onkeypress="javascript:if (event.keyCode == ENTER_KEY){enlargeFontSize(true);}" tabindex="5">
+								</li>
+								<li class="oneRow">
+									<img id="reduceFont" src="/images/amex2007/setSmallerFont.bmp" border="0" title="הקטנת טקסט" alt="הקטנת טקסט" class="changeFontSize" onclick="javascript:reduceFontSize(true);" onkeypress="javascript:if (event.keyCode == ENTER_KEY){reduceFontSize(true);}" tabindex="4">
+								</li>									
+								<li class="oneRow">									
+	         						
+	          							<a href="javascript:goToUrl('/isracard/amex?reqName=siteMapA');" class="exit" tabindex="3" title="מפת אתר">
+	          								מפת אתר
+	          							</a>
+	           						 
+								</li>									
+								<li class="oneRow">
+									<a href="#mainBody" title="עבור לתוכן הדף" tabindex="2" class="exit">
+										עבור לתוכן הדף
+									</a>
+								</li>					
+							</ul>
+		      			</td>
+		    		</tr>
+       				<tr>
+         				<td align="left" class="LastEnter"></td>
+       				</tr>
+		  		</tbody></table>
+		  	</td>
+		</tr>
+  		<tr><td class="LogoLine" colspan="2"></td></tr>
+		<tr>   						
+        	<td valign="top" colspan="2"> 
+        		<h5 class="hidden">אתם נמצאים כאן</h5><ul class="breadcrumbs"><li tabindex="7" class="breadcrumbs">מידע לקוחות</li><li tabindex="8" class="breadcrumbs" onkeypress="javascript:if (event.keyCode == ENTER_KEY){goToUrl('/isracard/amex?reqName=DealsListForDate_203');}"> &gt; <a href="javascript:goToUrl('/isracard/amex?reqName=DealsListForDate_203');" class="breadcrumbs">חיובים</a> &gt; </li><li tabindex="9" class="breadcrumbs">פרטי עסקה</li></ul>
+ 
+        	</td>
+         </tr>
+		<tr>
+			<td colspan="2">
+				<table width="780" border="0" cellspacing="0" cellpadding="0">
+					<tbody><tr align="right" class="GeneralinfoTitle"><td class="SpaceRightMenu"><a href="#mainBody" class="unseenLink">עבור לתוכן הדף &gt;</a></td><td><table cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><h1 class="MainTitleNoLine">פרטי עסקה</h1></td><td><table align="left" cellpadding="0" cellspacing="0"><tbody><tr><td><a href="javascript:openSizedScreen('/templates/general/webi2009.html','webi2009','220','180');"><img src="/images/webi2009.jpg" id="webi2009" border="0" title="אתר זה זכה במקום הראשון בתחרות Webi 2009" alt="אתר זה זכה במקום הראשון בתחרות Webi 2009" tabindex="91"></a></td><td><a href="/templates/amex/general/accessibilityNoteAmex.html#accessibilityConditions" class="unseenLink">הבהרה למשתמשי קורא מסך</a></td><td><a href="javascript:getPopupScreen('/templates/amex/general/accessibilityNoteAmex.html');"><img src="/images/accessibility2.gif" id="accessibility" border="0" title="אתר נגיש על פי רמה 2" alt="אתר נגיש על פי רמה 2" tabindex="90"></a></td></tr></tbody></table></td></tr></tbody></table></td></tr>
+
+     				<tr valign="top"> 
+     					<td>      			
+        					<h5 class="hidden">תפריט נושאים</h5><table class="menuTable" align="right"><tbody><tr><td><ul class="RightMenu"><li><ul class="RightMenu"><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ נתוני לקוחות בטעינה.','+');goToUrl('/isracard/amex?reqName=ShowCustomerData_101');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ נתוני לקוחות בטעינה.','+');goToUrl('/isracard/amex?reqName=ShowCustomerData_101');}" tabindex="10" class="RightTopMenuClosed" title="נתוני לקוחות">נתוני&nbsp;<a href="#" class="RightTopMenuClosed" accesskey="K"><u>ל</u></a>קוחות</li></ul></li><li><ul class="RightMenu"><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ חיובים בטעינה.','+');goToUrl('/isracard/amex?reqName=DealsListForDate_203');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ חיובים בטעינה.','+');goToUrl('/isracard/amex?reqName=DealsListForDate_203');}" tabindex="11" class="RightTopMenuSelected" title="חיובים"><a href="#" class="RightTopMenuSelected" accesskey="J"><u>ח</u></a>יובים</li></ul></li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ פירוט עסקאות למועד בטעינה.','+');goToUrl('/isracard/amex?reqName=DealsListForDate_203');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ פירוט עסקאות למועד בטעינה.','+');goToUrl('/isracard/amex?reqName=DealsListForDate_203');}" tabindex="12" class="SubMenuClosed" title="פירוט עסקאות למועד"><a href="#" class="SubMenuClosed" accesskey="P"><u>פ</u></a>ירוט&nbsp;עסקאות&nbsp;למועד</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ ריכוז חיובים קודמים בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzChiuvimKodmim_201');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ ריכוז חיובים קודמים בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzChiuvimKodmim_201');}" tabindex="13" class="SubMenuClosed" title="ריכוז חיובים קודמים">ר<a href="#" class="SubMenuClosed" accesskey="H"><u>י</u></a>כוז&nbsp;חיובים&nbsp;קודמים</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ ריכוז חיובים עתידיים בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzChiuvimAtidiim_202');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ ריכוז חיובים עתידיים בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzChiuvimAtidiim_202');}" tabindex="14" class="SubMenuClosed" title="ריכוז חיובים עתידיים">ריכוז&nbsp;חיובים&nbsp;<a href="#" class="SubMenuClosed" accesskey="G"><u>ע</u></a>תידיים</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ סיכום חיובים למועד הקרוב בטעינה.','+');goToUrl('/isracard/amex?reqName=SikumChiuvimLemoed_213');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ סיכום חיובים למועד הקרוב בטעינה.','+');goToUrl('/isracard/amex?reqName=SikumChiuvimLemoed_213');}" tabindex="15" class="SubMenuClosed" title="סיכום חיובים למועד הקרוב">סיכו<a href="#" class="SubMenuClosed" accesskey="O"><u>ם</u></a>&nbsp;חיובים&nbsp;למועד&nbsp;הקרוב</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ ריכוז הרשאות בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzHarshaot_211');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ ריכוז הרשאות בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzHarshaot_211');}" tabindex="16" class="SubMenuClosed" title="ריכוז הרשאות"><a href="#" class="SubMenuClosed" accesskey="R"><u>ר</u></a>יכוז&nbsp;הרשאות</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ חיובים על פי הרשאה בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzHoraotKeva_208');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ חיובים על פי הרשאה בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzHoraotKeva_208');}" tabindex="17" class="SubMenuClosed" title="חיובים על פי הרשאה">חיובים&nbsp;על&nbsp;פי&nbsp;<a href="#" class="SubMenuClosed" accesskey="V"><u>ה</u></a>רשאה</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ חסימת הרשאות חיוב בטעינה.','+');goToUrl('/isracard/amex?reqName=CustDebitCancelAuthorization_215');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ חסימת הרשאות חיוב בטעינה.','+');goToUrl('/isracard/amex?reqName=CustDebitCancelAuthorization_215');}" tabindex="18" class="SubMenuClosed" title="חסימת הרשאות חיוב">חסימת&nbsp;הרשאות&nbsp;חיוב</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ דוח רבעוני בטעינה.','+');goToUrl('/isracard/amex?reqName=DochRivoni_209');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ דוח רבעוני בטעינה.','+');goToUrl('/isracard/amex?reqName=DochRivoni_209');}" tabindex="19" class="SubMenuClosed" title="דוח רבעוני"><a href="#" class="SubMenuClosed" accesskey="S"><u>ד</u></a>וח&nbsp;רבעוני</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ הזמנת העתק הודעת חיוב בטעינה.','+');goToUrl('/isracard/amex?reqName=HeetekHadaotChiuv_206');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ הזמנת העתק הודעת חיוב בטעינה.','+');goToUrl('/isracard/amex?reqName=HeetekHadaotChiuv_206');}" tabindex="20" class="SubMenuClosed" title="הזמנת העתק הודעת חיוב">ה<a href="#" class="SubMenuClosed" accesskey="Z"><u>ז</u></a>מנת&nbsp;העתק&nbsp;הודעת&nbsp;חיוב</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ שערים בטעינה.','+');goToUrl('/isracard/amex?reqName=Shearim_210');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ שערים בטעינה.','+');goToUrl('/isracard/amex?reqName=Shearim_210');}" tabindex="21" class="SubMenuClosed" title="שערים"><a href="#" class="SubMenuClosed" accesskey="A"><u>ש</u></a>ערים</li><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ סטטוס בירור בטעינה.','+');goToUrl('/isracard/amex?reqName=StatusBerur_212');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ סטטוס בירור בטעינה.','+');goToUrl('/isracard/amex?reqName=StatusBerur_212');}" tabindex="22" class="SubMenuClosed" title="סטטוס ברור"><a href="#" class="SubMenuClosed" accesskey="X"><u>ס</u></a>טטוס&nbsp;בירור</li><li><ul class="RightMenu"><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ קרדיט בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzNetuneyCredit_301');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ קרדיט בטעינה.','+');goToUrl('/isracard/amex?reqName=RikuzNetuneyCredit_301');}" tabindex="23" class="RightTopMenuClosed" title="קרדיט"><a href="#" class="RightTopMenuClosed" accesskey="E"><u>ק</u></a>רדיט</li></ul></li><li><ul class="RightMenu"><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ נקודות והטבות בטעינה.','+');goToUrl('/isracard/amex?reqName=ShowRamainigStars_401');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ נקודות והטבות בטעינה.','+');goToUrl('/isracard/amex?reqName=ShowRamainigStars_401');}" tabindex="24" class="RightTopMenuClosed" title="נקודות והטבות"><a href="#" class="RightTopMenuClosed" accesskey="B"><u>נ</u></a>קודות&nbsp;והטבות</li></ul></li><li><ul class="RightMenu"><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ מידע eniL-nO בטעינה.','+');goToUrl('/isracard/amex?reqName=WelcomeArutzimService_601');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ מידע eniL-nO בטעינה.','+');goToUrl('/isracard/amex?reqName=WelcomeArutzimService_601');}" tabindex="25" class="RightTopMenuClosed" title="מידע On-Line"><a href="#" class="RightTopMenuClosed" accesskey="N"><u>מ</u></a>ידע&nbsp;eniL-nO</li></ul></li><li><ul class="RightMenu"><li onclick="javascript:showHourGlass();showMsgAmex('נא להמתין.+ כלים בטעינה.','+');goToUrl('/isracard/amex?reqName=HosafatHoradatCheshbon_42');" onkeypress="javascript:if (event.keyCode == ENTER_KEY){showHourGlass();showMsgAmex('נא להמתין.+ כלים בטעינה.','+');goToUrl('/isracard/amex?reqName=HosafatHoradatCheshbon_42');}" tabindex="26" class="RightTopMenuClosed" title="כלים"><a href="#" class="RightTopMenuClosed" accesskey="F"><u>כ</u></a>לים</li></ul></li></ul></td></tr></tbody></table>
+				 			
+				 		</td>
+				 		<td valign="top" id="transactionScreen" rowspan="2">
+				 			<table width="100%" border="0" cellspacing="0" cellpadding="2">	
+					 			
+					 			<tbody><tr><td class="Space"></td></tr>
+			      				<tr>
+				           			<td align="left">
+					               		<h5 class="hidden">תפריט כלים</h5><table id="buttons" class="iconTable"><tbody><tr><td class="Download" tabindex="95" title="הורדה לקובץ - לא פעיל">הורדה לקובץ</td><td class="Dotline">&nbsp;</td><td class="Excel" tabindex="94" title="הורדה לאקסל - לא פעיל">הורדה לאקסל</td><td class="Dotline">&nbsp;</td><td class="PrintActive" onclick="javascript:printPage();"><a href="#" tabindex="93" title="הדפסה">הדפסה</a></td><td class="Dotline">&nbsp;</td><td class="HelpActive" onclick="javascript:getHelpScreen('/help/amexhelp/204.jsp');"><a href="#" tabindex="92" title="עזרה">עזרה</a></td></tr></tbody></table>
+
+					               	</td>
+								</tr>
+								
+							    <tr valign="top">
+							    	<td align="center">
+										<form id="iform" name="iform" action="/isracard/amex" method="post">
+											
+
+
+<input type="hidden" id="siteName" name="siteName" value="A"> 
+<input type="hidden" id="reqName" name="reqName" value="action"> 
+<input type="hidden" id="direction" name="direction" value="1"> 
+<input type="hidden" id="previousTxName" name="previousTxName" value="DealsListForDate_203"> 
+<input type="hidden" id="showAsFile" name="showAsFile" value="0"> 
+<input type="hidden" id="fileType" name="fileType"> 
+<input type="hidden" id="help_screen" name="help_screen" value=""> 
+<input type="hidden" id="stage" name="stage" value="0"> 
+<input type="hidden" id="step" name="step" value="0">   
+<input type="hidden" id="fontSizeLevel" name="fontSizeLevel" value="0">
+<input type="hidden" id="transactionId" name="transactionId" value="PirteyIska_204">
+<input type="hidden" id="csrfToken" name="csrfToken" value="LbDPEDxVw/WbkNQetIx/w2UTveYk7hEFRYTfJCOoT0E=">
+											<a name="mainBody" tabindex="110"></a>
+											
+	<input type="hidden" id="shovarRatz" name="shovarRatz" value="330498922">
+	<input type="hidden" id="moedChiuv" name="moedChiuv" value="052012" ;="">
+	<input type="hidden" id="selectedDate" name="selectedDate" value="23" ;="">
+	<input type="hidden" id="isInbound" name="isInbound" value="yes">
+	<input type="hidden" id="inState" name="inState" value="yes">
+	<input type="hidden" id="dealCode" name="dealCode" value="T">
+	<input type="hidden" id="isShowPaymentsTable" name="isShowPaymentsTable" value="yes">
+	<input type="hidden" id="purchaseDateOutboundIsracard" name="purchaseDateOutboundIsracard" value="06/04/2012">
+	<input type="hidden" id="moedChiuvFull" name="moedChiuvFull" value="10/05/2012">
+	<input type="hidden" id="paymentNumber" name="paymentNumber" value=" 2">	
+	<input type="hidden" id="voucherNumber" name="voucherNumber" value="8001001">
+	<input type="hidden" id="numberOfPayments" name="numberOfPayments" value="13">
+	<input type="hidden" id="chargeSum" name="chargeSum" value="       183.69 ">
+	<input type="hidden" id="purchaseDateOutboundIsracard" name="purchaseDateOutboundIsracard" value="06/04/2012">
+	<input type="hidden" id="supplierName" name="supplierName" value="  א&quot;ת ןיקניש ןיא טיפ">
+	<input type="hidden" id="selectedBerurText" name="selectedBerurText" value="null">	
+
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td>
+				<table summary="טבלת פרטי עסקה בארץ או בחו" ל"="" class="Details" cellpadding="0" cellspacing="1">
+<thead></thead>
+<tbody>
+
+					</tbody><caption class="DetailsTitle">פרטי עסקה</caption>
+					<tbody><tr>
+						<td colspan="4" class="DetailsName">05/2012 דעומל ,3048 סיטרכ ,010-886-0518027 ןובשח ,זרא        ןמקיד</td>
+					</tr>
+					
+						
+						
+							
+								
+								
+									 
+
+
+<tr>	
+	<th class="DetailsSubTitle" name="generalDetails" id="generalDetails" scope="col" colspan="2" nowrap="nowrap">
+פרטי עסקה כלליים</th>
+
+	<th class="DetailsSubTitle" name="supplierDetails" id="supplierDetails" scope="col" colspan="2" nowrap="nowrap">
+פרטי ספק</th>
+
+</tr><tr>
+	<th class="DetailsTDParameter" name="voucherNumber" id="voucherNumber" scope="row" nowrap="nowrap">
+מספר שובר</th>
+
+	<td class="DetailsTD" headers="generalDetails voucherNumber">8001001</td>
+	<th class="DetailsTDParameter" name="supplierName" id="supplierName" scope="row" nowrap="nowrap">
+שם בית עסק</th>
+
+	<td class="DetailsTD" headers="supplierDetails supplierName">  א"ת ןיקניש ןיא טיפ</td>
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="dealType" id="dealType" scope="row" nowrap="nowrap">
+סוג עסקה</th>
+
+	<td class="DetailsTD" headers="generalDetails dealType">     םימולשתב הקסע</td>
+	<th class="DetailsTDParameter" name="sector" id="sector" scope="row" nowrap="nowrap">
+ענף משק</th>
+
+	<td class="DetailsTD" headers="supplierDetails sector">               רשוכ ינוכמ     </td>
+</tr>
+<tr>
+	<td class="DetailsTD">&nbsp;</td>
+	<td class="DetailsTD" headers="generalDetails linking"> </td>
+	<th class="DetailsTDParameter" name="address" id="address" scope="row" nowrap="nowrap">
+כתובת בית עסק</th>
+	
+	<td class="DetailsTD" headers="supplierDetails address"> ופי ביבא לת              47 ןיקנש</td>
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="moreInfo" id="moreInfo" scope="row" nowrap="nowrap">
+פרוט נוסף</th>
+
+	<td class="DetailsTD" headers="generalDetails moreInfo">13 ךותמ  2 םולשת</td>
+	<th class="DetailsTDParameter" name="phoneNumber" id="phoneNumber" scope="row" nowrap="nowrap">
+טלפון בית עסק</th>
+
+	<td class="DetailsTD" headers="supplierDetails phoneNumber">03-5252000</td>
+</tr>
+<tr>
+	<th class="DetailsSubTitle" name="purchaseDetails" id="purchaseDetails" scope="col" colspan="4" nowrap="nowrap">
+נתונים כספיים</th>
+
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="purchaseDateOutboundIsracard" id="purchaseDateOutboundIsracard" scope="row" nowrap="nowrap">
+תאריך רכישה</th>
+
+	<td class="DetailsTD" headers="purchaseDetails purchaseDateOutboundIsracard">06/04/2012</td>
+	<th class="DetailsTDParameter" name="purchaseDateOutboundIsracard" id="purchaseDateOutboundIsracard" scope="row" nowrap="nowrap">
+הנחה</th>
+
+	<td class="DetailsTD" headers="purchaseDetails purchaseDateOutboundIsracard">  0.000%</td>
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="purchaseTime" id="purchaseTime" scope="row" nowrap="nowrap">
+שעת רכישה</th>
+
+	<td class="DetailsTD" headers="purchaseDetails purchaseTime">09:56</td>
+	<th class="DetailsTDParameter" name="sumBeforeDiscount" id="sumBeforeDiscount" scope="row" nowrap="nowrap">
+סכום הנחה</th>
+
+	<td class="DetailsTD" headers="purchaseDetails sumBeforeDiscount">    0.00 </td>
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="dealSum" id="dealSum" scope="row" nowrap="nowrap">
+סכום עסקה</th>
+
+	<td class="DetailsTD" headers="purchaseDetails dealSum">      2388.00 </td>
+	<th class="DetailsTDParameter" name="saleName" id="saleName" scope="row" nowrap="nowrap">
+שם מבצע</th>
+
+	<td class="DetailsTD" headers="purchaseDetails saleName"></td>
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="chargeSum" id="chargeSum" scope="row" nowrap="nowrap">
+סכום לחיוב</th>
+
+	<td class="DetailsTD" headers="purchaseDetails chargeSum">       183.69 </td>
+	<th class="DetailsTDParameter" name="secondSaleName" id="secondSaleName" scope="row" nowrap="nowrap">
+שם מבצע נוסף</th>
+
+	<td class="DetailsTD" headers="purchaseDetails secondSaleName"></td>
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="sumOfFund" id="sumOfFund" scope="row" nowrap="nowrap">
+סכום קרן</th>
+
+	<td class="DetailsTD" headers="purchaseDetails sumOfFund">       183.69 </td>
+	<th class="DetailsTDParameter" name="numberOfPayments" id="numberOfPayments" scope="row" nowrap="nowrap">
+מספר תשלום</th>
+
+	<td class="DetailsTD" headers="purchaseDetails numberOfPayments"> 2</td>
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="interestSum" id="interestSum" scope="row" nowrap="nowrap">
+סכום ריבית</th>
+
+	<td class="DetailsTD" headers="purchaseDetails interestSum">         0.00 </td>
+	<th class="DetailsTDParameter" name="numberOfPayments" id="numberOfPayments" scope="row" nowrap="nowrap">
+מספר תשלומים</th>
+
+	<td class="DetailsTD" headers="purchaseDetails numberOfPayments">13</td>
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="interestPercentage" id="interestPercentage" scope="row" nowrap="nowrap">
+ריבית</th>
+
+	<td class="DetailsTD" headers="purchaseDetails interestPercentage">%</td>
+	<th class="DetailsTDParameter" name="sumOfCompensation" id="sumOfCompensation" scope="row" nowrap="nowrap">
+סכום פיצוי</th>
+
+	<td class="DetailsTD" headers="purchaseDetails sumOfCompensation">        0 </td>
+</tr>
+<tr>
+	<th class="DetailsTDParameter" name="sumOfValueAddedTax" id="sumOfValueAddedTax" scope="row" nowrap="nowrap">
+סכום מע"מ</th>
+
+	<td class="DetailsTD" headers="purchaseDetails sumOfValueAddedTax">    0.00 </td>
+	<th class="DetailsTDParameter" name="valueDate" id="valueDate" scope="row" nowrap="nowrap">
+תאריך ערך</th>
+
+	<td class="DetailsTD" headers="purchaseDetails valueDate">        0 :</td>
+</tr>
+
+	<tr>
+		<th class="DetailsSubTitle" name="paymentsDetails" id="paymentsDetails" scope="col" colspan="4" nowrap="nowrap">
+פירוט תשלומים לעיסקה</th>
+
+	</tr>
+	<tr>
+		
+			<th class="DetailsTDParameterHeader" scope="col" nowrap="nowrap">
+מספר תשלום</th>
+						
+		
+			<th class="DetailsTDParameterHeader" scope="col" nowrap="nowrap">
+תאריך תשלום</th>
+						
+		
+			<th class="DetailsTDParameterHeader" scope="col" nowrap="nowrap">
+מטבע</th>
+						
+		
+			<th class="DetailsTDParameterHeader" scope="col" nowrap="nowrap">
+סכום לחיוב</th>
+						
+		
+	</tr>					
+	
+		<tr>
+			<td class="DetailsTD"> 1</td>
+			<td class="DetailsTD">10/04/12</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.72 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD">  </td>
+			<td class="DetailsTD">םלוש.ס</td>
+			<td class="DetailsTD"> </td>
+			<td class="DetailsTD">    183.72 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD"> 2</td>
+			<td class="DetailsTD">10/05/12</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD"> 3</td>
+			<td class="DetailsTD">10/06/12</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD"> 4</td>
+			<td class="DetailsTD">10/07/12</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD"> 5</td>
+			<td class="DetailsTD">10/08/12</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD"> 6</td>
+			<td class="DetailsTD">10/09/12</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD"> 7</td>
+			<td class="DetailsTD">10/10/12</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD"> 8</td>
+			<td class="DetailsTD">10/11/12</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD"> 9</td>
+			<td class="DetailsTD">10/12/12</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD">10</td>
+			<td class="DetailsTD">10/01/13</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD">11</td>
+			<td class="DetailsTD">10/02/13</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD">12</td>
+			<td class="DetailsTD">10/03/13</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD">13</td>
+			<td class="DetailsTD">10/04/13</td>
+			<td class="DetailsTD">ח"ש</td>
+			<td class="DetailsTD">    183.69 </td>
+		</tr>
+	
+		<tr>
+			<td class="DetailsTD">  </td>
+			<td class="DetailsTD">םלשל.ס</td>
+			<td class="DetailsTD"> </td>
+			<td class="DetailsTD">   2204.28 </td>
+		</tr>
+	
+
+      							
+							
+						
+					
+										<tr><td class="SpaceLarge" colspan="4"></td></tr>
+					<tr><td class="SpaceLarge" colspan="4"></td></tr>
+					
+					
+						<tr>	
+							<th class="DetailsSubTitle" name="generalDetails" id="generalDetails" scope="col" colspan="4" nowrap="nowrap">
+הגשת פניה</th>
+
+						</tr>
+						
+						<tr><td class="SpaceLarge" colspan="4"></td></tr>
+						<tr>
+							<td colspan="4">
+								
+								 
+									
+									
+										<select id="selectedBerur" name="selectedBerur" title="סיבת בירור" tabindex="111" class="ChooseDropMenuRtl">
+											<option selected="selected" value="0">-בחר סיבת בירור-</option><option value="1">בטוח שלא ביצעתי את העסקה</option><option value="3">חויבתי בסכום גבוה ממה שאישרתי</option><option value="6">חויבתי בכפילות בכרטיס (פניה דרך מוקד שירות בלבד)</option><option value="7">שילמתי כבר במזומן</option><option value="8">שילמתי כבר בהמחאה</option><option value="11">חושב שלא ביצעתי את העסקה</option><option value="12">חויבתי בקרדיט במקום בתשלומים שווים</option><option value="13">חויבתי בתשלום אחד במקום בתשלומים שווים</option><option value="14">בצעתי את העסקה אך לא קיבלתי תמורה (תשלום אחד)</option><option value="15">בצעתי את העסקה אך לא קיבלתי תמורה (תשלומים)</option><option value="18">לא קיבלתי הנחת מועדון</option>
+										</select>
+		      						
+								
+							</td>
+						</tr>
+						<tr><td class="SpaceLarge" colspan="4"></td></tr>
+						
+							<tr>
+								<td colspan="4">
+									<input type="button" value="הגשת בירור" class="showDetails" tabindex="112" title="הגשת בירור" onclick="javascript:goTo214('PtichatBerur_214');">
+								</td>
+							</tr>
+						
+					
+					<tr><td class="SpaceLarge" colspan="4"></td></tr>
+					<tr>
+						<td colspan="4" align="right" class="DetailsFooter">
+							<table border="0" cellpadding="0" cellspacing="0" align="right">
+								<tbody><tr>
+									<td align="right" class="ShowDetailsTD" colspan="4">
+										<a href="javascript:goTransactionBack();" class="showDetails" title="חזרה" tabindex="113">חזרה</a>
+								
+									</td>
+								</tr>
+							</tbody></table>
+				    	</td>
+				    </tr>			
+	   			</tbody>
+</table>
+
+	   		</td>
+	   	</tr>
+	</tbody></table>
+
+											
+ 
+
+
+    							
+										</form>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table class="Meidakashur" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><h3 class="MeidaKashurTitle">מידע קשור</h3></td></tr><tr><td align="right" class="Meidakashur"><a href="javascript:goToUrl('/isracard/amex?reqName=DealsListForDate_203');" title="פירוט עסקאות למועד" class="Meidakashur" tabindex="201">פירוט עסקאות למועד</a></td></tr></tbody></table>
+
+									</td>
+								</tr>								
+								<tr>
+									<td class="Footer">&nbsp;</td>
+								</tr>
+							</tbody></table>
+				 		</td>
+				 	</tr>
+				 	<tr>
+				 		<td class="SpaceRightMenu"></td>
+				 	</tr>
+				</tbody></table>
+	 		</td>
+		</tr>
+	</tbody></table>
+
+</body></html>
