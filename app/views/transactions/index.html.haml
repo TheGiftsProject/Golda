@@ -1,12 +1,27 @@
-%h1= @name
+# encoding: UTF-8
 
 #nav
   %ol
-    %li= link_to('all', transactions_path(@name))
+    %li= link_to('*', transactions_path(@name))
     - @sectors.each do |s|
       %li= link_to(s, transactions_sector_path(@name, s))
-#txns
-  %ol
-    - @txns.each do |t|
-      %li= t.supplier_name
-
+#data
+  #stats
+    .stat
+      %p THIS MONTH
+      %span#num_stat
+        = "$#@this_month"
+    .stat
+      %p PREVIOUS MONTH
+      %span#num_stat
+        = "$#@prev_month"
+    .stat
+      %p ON AVERAGE
+      %span#num_stat
+        = "$#@avg_month"
+  .clear
+  #txns
+    %ol
+      - @txns.each do |t|
+        %li= t.supplier_name
+.clear

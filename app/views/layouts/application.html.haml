@@ -6,4 +6,6 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    #top_bar
+      %img#logo{:src => asset_path("golda.jpeg")}
     = yield

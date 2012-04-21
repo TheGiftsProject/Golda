@@ -1,20 +1,27 @@
 class ImporterController < ApplicationController
-  respond_to :json
+  skip_before_filter :verify_authenticity_token
+  #respond_to :json
 
   def import
-    req = ActiveSupport::JSON.decode(request.body)
-    user = req['id']
-    txns = req['txns']
+    puts params.inspect
+    #req = ActiveSupport::JSON.decode(request.body)
+    user = '5' # FIXME ? 
+    #txns = req['txns']
+    #txns = [req]
+    txns = [params]
     txns.each do |txn|
-      t = Transaction.new({
-        :amount => txn['amount'],
-        :supplier_name => txn['supplier_name'],
-        :sector => txn['sector'],
-        :date => Time.now
+      t = Transaction.find_or_initialize_by_txn_id(txn['txnId'])
+      t.update_attributes({
+        :amount => txn['sum'],
+        :supplier_name => txn['supplierName'].reverse,
+        :sector => txn['sector'].reverse,
+        :date => DateTime.parse("#{txn['date']} #{txn['time']}"),
+        :address => txn['address'].reverse
       })
       t.user_id = user
       t.save!
     end
-    respond_with({:user_id => req['id']}, :location => nil)
+    #respond_with({:user_id => user}, :location => nil)
+    render :text => 'klsdfjklsdkljfds'
   end
 end

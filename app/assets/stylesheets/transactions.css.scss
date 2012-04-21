@@ -2,6 +2,51 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#nav, #txns {
+#nav {
+  float: right;
+  width: 20%;
+}
+
+#top_bar {
+  background-color: #D7F0DD;
+  height: 80px;
+  padding: 15px;
+  box-shadow: 3px 3px 5px 0px #CCC;
+}
+
+#top_bar #logo {
+  height: 80px;
+  float: right;
+}
+
+#data {
+  width: 80%;
   float: left;
+}
+
+#stats {
+  height: 80px;
+  color: #2f2f2f;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+#stats .stat {
+  float: right;
+  width: 33%;
+  text-align: center;
+}
+
+#stats .stat #num_stat {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
+}
+
+.clear {
+  clear: both;
 }
