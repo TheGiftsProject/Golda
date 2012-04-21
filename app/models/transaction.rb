@@ -32,6 +32,7 @@ class Transaction < ActiveRecord::Base
     end
 
     entries = sum(:amount, :conditions => conds, :group => "YEAR(date), MONTH(date)")
+    return 0 if entries.empty?
     entries.values.sum / entries.size
   end
 end
