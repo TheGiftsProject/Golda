@@ -8,4 +8,8 @@ class Transaction < ActiveRecord::Base
   def self.for_user(user)
     where(:user_id => user)
   end
+
+  def self.for_user_and_sector(user, sector)
+    where(:user_id => user, :sector => sector)
+  end
 end

@@ -1,6 +1,7 @@
 Golda::Application.routes.draw do
   post "import" => 'importer#import'
-  get "/:id" => 'transactions#index'
+  get "/:id" => 'transactions#index', :as => 'transactions'
+  get "/:id/:sector" => "transactions#index", :as => "transactions_sector"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

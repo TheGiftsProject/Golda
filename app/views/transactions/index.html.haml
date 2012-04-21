@@ -2,9 +2,9 @@
 
 #nav
   %ol
-    %li all
+    %li= link_to('all', transactions_path(@name))
     - @sectors.each do |s|
-      %li= s
+      %li= link_to(s, transactions_sector_path(@name, s))
 #txns
   %ol
     - @txns.each do |t|
