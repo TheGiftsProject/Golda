@@ -19,6 +19,12 @@
   float: right;
 }
 
+#top_bar #name {
+  float: left;
+  font-size: 20px;
+  color: #8f8f8f;
+}
+
 #data {
   width: 80%;
   float: left;
@@ -42,9 +48,31 @@
   font-size: 36px;
 }
 
+#stats .stat p {
+  text-decoration: underline;
+}
+
+#txns {
+  margin-top: 25px;
+  text-align: center;
+}
+
+#txns table thead tr {
+  background: #ccc;
+}
+
+#txns tbody tr:nth-child(even) {
+  background: #ccc;
+}
+
+#txns tbody tr:nth-child(odd) {
+  background: #fff;
+}
+
 body {
   margin: 0;
   direction: rtl;
+  color: #282828;
 }
 
 .clear {

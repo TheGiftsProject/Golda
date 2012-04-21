@@ -25,6 +25,13 @@ class Transaction < ActiveRecord::Base
   end
 
   def self.avg_per_month(user, sector)
-    0
+    if sector
+      conds = ["user_id = ? and sector = ?", user, sector]
+    else
+      conds = ["user_id = ?", user]
+    end
+
+    entries = sum(:amount, :conditions => conds, :group => "YEAR(date), MONTH(date)")
+    entries.values.sum / entries.size
   end
 end

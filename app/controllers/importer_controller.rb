@@ -5,7 +5,7 @@ class ImporterController < ApplicationController
   def import
     puts params.inspect
     #req = ActiveSupport::JSON.decode(request.body)
-    user = '5' # FIXME ? 
+    user = 'golda' # FIXME ? 
     #txns = req['txns']
     #txns = [req]
     txns = [params]
