@@ -1,0 +1,12 @@
+%h1= @name
+
+#nav
+  %ol
+    %li= link_to('all', transactions_path(@name))
+    - @sectors.each do |s|
+      %li= link_to(s, transactions_sector_path(@name, s))
+#txns
+  %ol
+    - @txns.each do |t|
+      %li= t.supplier_name
+
