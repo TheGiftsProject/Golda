@@ -8,4 +8,6 @@
   %body
     #top_bar
       %img#logo{:src => asset_path("golda.jpeg")}
+      - if @name.present?
+        #name= "Hi, #@name"
     = yield

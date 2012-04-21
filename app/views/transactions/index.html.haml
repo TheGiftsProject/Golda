@@ -21,7 +21,16 @@
         = "$#@avg_month"
   .clear
   #txns
-    %ol
-      - @txns.each do |t|
-        %li= t.supplier_name
+    %table
+      %thead
+        %tr
+          %th Name
+          %th Amount
+          %th Address
+      %tbody
+        - @txns.each do |t|
+          %tr
+            %td= t.supplier_name
+            %td= t.amount
+            %td= t.address
 .clear
