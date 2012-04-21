@@ -3,5 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #nav, #txns {
-  float: left;
+  float: right;
+}
+
+#top_bar {
+  background-color: #D7F0DD;
+  height: 80px;
+  padding: 15px;
+  box-shadow: 3px 3px 5px 0px #CCC;
+}
+
+#top_bar #logo {
+  height: 80px;
+  float: right;
+}
+
+body {
+  margin: 0;
+  direction: rtl;
 }

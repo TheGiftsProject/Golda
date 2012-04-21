@@ -1,4 +1,4 @@
-%h1= @name
+# encoding: UTF-8
 
 #nav
   %ol
@@ -9,4 +9,9 @@
   %ol
     - @txns.each do |t|
       %li= t.supplier_name
+  #stats
+    %p= "This month you spent #@this_month"
+    %p= "Previous month you spent #@prev_month"
+    %p= "On average each month you spend #@avg_month"
+
 
