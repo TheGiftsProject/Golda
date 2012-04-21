@@ -2,16 +2,26 @@
 
 #nav
   %ol
-    %li= link_to('all', transactions_path(@name))
+    %li= link_to('*', transactions_path(@name))
     - @sectors.each do |s|
       %li= link_to(s, transactions_sector_path(@name, s))
-#txns
-  %ol
-    - @txns.each do |t|
-      %li= t.supplier_name
+#data
   #stats
-    %p= "This month you spent #@this_month"
-    %p= "Previous month you spent #@prev_month"
-    %p= "On average each month you spend #@avg_month"
-
-
+    .stat
+      %p THIS MONTH
+      %span#num_stat
+        = "$#@this_month"
+    .stat
+      %p PREVIOUS MONTH
+      %span#num_stat
+        = "$#@prev_month"
+    .stat
+      %p ON AVERAGE
+      %span#num_stat
+        = "$#@avg_month"
+  .clear
+  #txns
+    %ol
+      - @txns.each do |t|
+        %li= t.supplier_name
+.clear
