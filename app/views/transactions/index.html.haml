@@ -1,0 +1,12 @@
+%h1= @name
+
+#nav
+  %ol
+    %li all
+    - @sectors.each do |s|
+      %li= s
+#txns
+  %ol
+    - @txns.each do |t|
+      %li= t.supplier_name
+
