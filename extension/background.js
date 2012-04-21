@@ -20,16 +20,24 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 
     function send(count) {
         getDetailsDom(tab, data, transactionList[count]).done(function (result) {
-            //console.dir(parseDetails($(result)));
             if (result) {
-                $.ajax("http://192.168.2.29:3000/import", { data: parseDetails($(result)), dataType: 'json', type: "POST"})
-            }
-            if (count < transactionList.length) {
-                chrome.tabs.sendRequest(tab.id, {action: "updateProgress", progress: count/transactionList.length});
-                setTimeout(function() { send(count+1); }, 300);
+                $.ajax("http://192.168.2.29:3000/import", { data: parseDetails($(result)), dataType: 'json', type: "POST", complete: function() {
+                    if (count < transactionList.length) {
+                        chrome.tabs.sendRequest(tab.id, {action: "updateProgress", progress: count/transactionList.length});
+                        send(count+1);
+                    } else {
+                        chrome.tabs.sendRequest(tab.id, {action: "endModalAction"});
+                        running = false;
+                    }
+                }});
             } else {
-                chrome.tabs.sendRequest(tab.id, {action: "endModalAction"});
-                running = false;
+                if (count < transactionList.length) {
+                    chrome.tabs.sendRequest(tab.id, {action: "updateProgress", progress: count/transactionList.length});
+                    send(count+1);
+                } else {
+                    chrome.tabs.sendRequest(tab.id, {action: "endModalAction"});
+                    running = false;
+                }
             }
         });
     }
