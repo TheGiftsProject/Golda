@@ -2,31 +2,31 @@
 
 #nav
   %ol
-    %li= link_to('*', transactions_path(@name))
+    %li= link_to('הכל', transactions_path(@name))
     - @sectors.each do |s|
       %li= link_to(s, transactions_sector_path(@name, s))
 #data
   #stats
     .stat
-      %p THIS MONTH
+      %p החודש הנוכחי:
       %span#num_stat
-        = "$#@this_month"
+        = "#@this_month ₪"
     .stat
-      %p PREVIOUS MONTH
+      %p החודש הקודם:
       %span#num_stat
-        = "$#@prev_month"
+        = "#@prev_month ₪"
     .stat
-      %p ON AVERAGE
+      %p ממוצע חודשי:
       %span#num_stat
-        = "$#@avg_month"
+        = "#@avg_month ₪"
   .clear
   #txns
     %table
       %thead
         %tr
-          %th Name
-          %th Amount
-          %th Address
+          %th תיאור
+          %th סכום
+          %th כתובת
       %tbody
         - @txns.each do |t|
           %tr
