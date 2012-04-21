@@ -7,24 +7,6 @@
   width: 20%;
 }
 
-#top_bar {
-  background-color: #D7F0DD;
-  height: 80px;
-  padding: 15px;
-  box-shadow: 3px 3px 5px 0px #CCC;
-}
-
-#top_bar #logo {
-  height: 80px;
-  float: right;
-}
-
-#top_bar #name {
-  float: left;
-  font-size: 20px;
-  color: #8f8f8f;
-}
-
 #data {
   width: 80%;
   float: left;
@@ -57,22 +39,12 @@
   text-align: center;
 }
 
-#txns table thead tr {
-  background: #ccc;
-}
-
-#txns tbody tr:nth-child(even) {
+#txns table thead tr, #txns tbody tr:nth-child(even) {
   background: #ccc;
 }
 
 #txns tbody tr:nth-child(odd) {
   background: #fff;
-}
-
-body {
-  margin: 0;
-  direction: rtl;
-  color: #282828;
 }
 
 .clear {

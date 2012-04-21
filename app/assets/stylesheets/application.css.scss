@@ -11,3 +11,35 @@
  *= require_self
  *= require_tree .
 */
+
+$logo_height: 80px;
+
+body {
+  margin: 0;
+  direction: rtl;
+  color: #282828;
+}
+
+#top_bar {
+  background-color: #D7F0DD;
+  height: 80px;
+  padding: 15px;
+  box-shadow: 3px 3px 5px 0px #CCC;
+}
+
+#top_bar #logo {
+  height: $logo_height;
+  float: right;
+}
+
+#top_bar #name {
+  float: left;
+  font-size: 20px;
+  color: #8f8f8f;
+}
+
+#top_bar #golda {
+  font-size: 25px;
+  margin-right: 20px;
+  line-height: $logo_height;
+}
