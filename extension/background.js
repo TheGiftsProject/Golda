@@ -1,54 +1,86 @@
 var running = false;
 chrome.browserAction.onClicked.addListener(function(tab) {
-  // Send a request to the content script.
-  if (running) return;
-  running = true;
-  chrome.tabs.sendRequest(tab.id, {action: "startModalAction"});
-  chrome.tabs.sendRequest(tab.id, {action: "getDOM"}, function(response)
-  {
-    var dom = $(response.dom);
-    var form = dom.find("#iform")[0];
-    var data = {};
+    // Send a request to the content script.
+    if (running) return;
+    running = true;
+    chrome.tabs.sendRequest(tab.id, {
+        action: "startModalAction"
+    });
+    chrome.tabs.sendRequest(tab.id, {
+        action: "getDOM"
+    },
+    function(response) {
+        var dom = $(response.dom);
+        var form = dom.find("#iform")[0];
+        var data = {};
 
-    for (var i = 0; form[i] != undefined; ++i) {
-        data[form[i].name] = form[i].value;
-    }
+        for (var i = 0; form[i] != undefined; ++i) {
+            data[form[i].name] = form[i].value;
+        }
 
-    data.moedChiuv = dom.find("#selectedDate").find("option[selected]").eq(0).text().replace('/', '');
+        data.moedChiuv = dom.find("#selectedDate").find("option[selected]").eq(0).text().replace('/', '');
 
-    var transactionList = getTransactionList(dom);
+        var transactionList = getTransactionList(dom);
 
-    function send(count) {
-        getDetailsDom(tab, data, transactionList[count]).done(function (result) {
-            if (result) {
-                $.ajax("http://192.168.2.29:3000/import", { data: parseDetails($(result)), dataType: 'json', type: "POST", complete: function() {
-                    if (count < transactionList.length) {
-                        chrome.tabs.sendRequest(tab.id, {action: "updateProgress", progress: count/transactionList.length});
-                        send(count+1);
-                    } else {
-                        chrome.tabs.sendRequest(tab.id, {action: "endModalAction"});
-                        running = false;
-                    }
-                }});
-            } else {
-                if (count < transactionList.length) {
-                    chrome.tabs.sendRequest(tab.id, {action: "updateProgress", progress: count/transactionList.length});
-                    send(count+1);
+        var current_progress = 0;
+        var interv = setInterval(function() {
+            current_progress += 0.001;
+            chrome.tabs.sendRequest(tab.id, {
+                action: "updateProgress",
+                progress: current_progress
+            });;
+        },
+        100);
+        function send(count) {
+            getDetailsDom(tab, data, transactionList[count]).done(function(result) {
+                if (result) {
+                    $.ajax("http://192.168.2.29:3000/import", {
+                        data: parseDetails($(result)),
+                        dataType: 'json',
+                        type: "POST",
+                        complete: function() {
+                            if (count < transactionList.length) {
+                                current_progress = count / transactionList.length;
+                                chrome.tabs.sendRequest(tab.id, {
+                                    action: "updateProgress",
+                                    progress: current_progress
+                                });
+                                send(count + 1);
+                            } else {
+                                chrome.tabs.sendRequest(tab.id, {
+                                    action: "endModalAction"
+                                });
+                                running = false;
+                                clearInterval(interv);
+                            }
+                        }
+                    });
                 } else {
-                    chrome.tabs.sendRequest(tab.id, {action: "endModalAction"});
-                    running = false;
+                    if (count < transactionList.length) {
+                        current_progress = count / transactionList.length;
+                        chrome.tabs.sendRequest(tab.id, {
+                            action: "updateProgress",
+                            progress: current_progress
+                        });
+                        send(count + 1);
+                    } else {
+                        chrome.tabs.sendRequest(tab.id, {
+                            action: "endModalAction"
+                        });
+                        running = false;
+                        clearInterval(interv);
+                    }
                 }
-            }
-        });
-    }
+            });
+        }
 
-    send(0);
-  });
+        send(0);
+    });
 });
 
 function getTransactionList(dom) {
     var params = [];
-    dom.find("a[href*='javascript:showDealDetailsInbound']").each( function() {
+    dom.find("a[href*='javascript:showDealDetailsInbound']").each(function() {
         var paramsArray = $(this).attr('href').match(/\('([^']+)',\s?'([^']*)'\)/);
         paramsArray.shift();
         params.push(paramsArray);
@@ -72,10 +104,14 @@ function getDetailsDom(tab, data, transactionParams) {
         reqName: "action",
         direction: "0"
     };
-    var postParams = $.extend({}, data, params);
+    var postParams = $.extend({},
+    data, params);
 
-
-    chrome.tabs.sendRequest(tab.id, {postParams: postParams, action: "getDetails"}, function(response) {
+    chrome.tabs.sendRequest(tab.id, {
+        postParams: postParams,
+        action: "getDetails"
+    },
+    function(response) {
         deferred.resolve(response.dom);
     });
 
@@ -85,14 +121,14 @@ function getDetailsDom(tab, data, transactionParams) {
 function parseDetails(dom) {
     var valueFields = dom.find(".DetailsTD");
     //return { 
-        //txnId: '123123123',
-        //supplierName: 'Sakin enterprisers',
-        //sector: 'asdfasdf',
-        //address: 'Rostchinl 13', 
-        //date:'03/12/2011', 
-        //time: '12:00',
-        //sum: 12
-        //}
+    //txnId: '123123123',
+    //supplierName: 'Sakin enterprisers',
+    //sector: 'asdfasdf',
+    //address: 'Rostchinl 13', 
+    //date:'03/12/2011', 
+    //time: '12:00',
+    //sum: 12
+    //}
     return {
         txnId: dom.find("#shovarRatz").val(),
         supplierName: getValueFromField(valueFields, "supplierName"),
@@ -108,5 +144,6 @@ function getValueFromField(fields, name) {
     var find = fields.filter("[headers*='" + name + "']");
     var eq = find.eq(0);
     var match = eq.text().match(/\S+/g);
-    return (match == null || match == undefined ? "" : match.join(' '));
+    return (match == null || match == undefined ? "": match.join(' '));
 }
+
